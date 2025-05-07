@@ -96,10 +96,10 @@ export default async function ArtworkPage(props: { params: Promise<{ id: string 
           {/* Purchase notice or Sold notice */}
           <div className="mt-6 md:mt-10">
             {isPurchased ? (
-              <Alert className="bg-gray-100 border-gray-300">
-                <CheckCircle className="h-5 w-5 text-gray-500" />
-                <AlertTitle className="text-gray-700 font-medium">This Artwork Has Been Sold</AlertTitle>
-                <AlertDescription className="mt-2 text-gray-600">
+              <Alert variant="default" className="border-muted-foreground/30">
+                <CheckCircle className="h-5 w-5 text-muted-foreground" />
+                <AlertTitle>This Artwork Has Been Sold</AlertTitle>
+                <AlertDescription className="mt-2">
                   This piece is no longer available for purchase. Please explore our other available artworks by {artist?.name} or other artists in our gallery.
                 </AlertDescription>
                 <div className="mt-4 flex justify-center">
@@ -111,7 +111,7 @@ export default async function ArtworkPage(props: { params: Promise<{ id: string 
                 </div>
               </Alert>
             ) : (
-              <Alert className="bg-primary/10 border-primary">
+              <Alert variant="default" className="border-primary">
                 <AlertCircle className="h-5 w-5 text-primary" />
                 <AlertTitle className="text-primary font-medium">Available for Purchase</AlertTitle>
                 <AlertDescription className="mt-2">
