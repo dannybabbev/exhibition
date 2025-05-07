@@ -2,10 +2,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { artworks, artists } from "@/mock/artists-data";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, Phone, Mail } from "lucide-react";
+import { AlertCircle, Phone, Mail, CheckCircle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ShareButton } from "@/components/ui/share-button";
 import { Metadata } from "next";
+import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const params = await props.params;
@@ -37,6 +39,7 @@ export default async function ArtworkPage(props: { params: Promise<{ id: string 
   }
 
   const artist = artists.find((artist) => artist.id === artwork.artist_id);
+  const isPurchased = artwork.purchased === true;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
@@ -51,12 +54,22 @@ export default async function ArtworkPage(props: { params: Promise<{ id: string 
       
       {/* Artwork display - large and centered */}
       <div className="flex flex-col items-center mb-8 md:mb-12">
-        <div className="w-full max-w-3xl mb-4 md:mb-8 overflow-hidden rounded-lg shadow-lg">
+        <div className="w-full max-w-3xl mb-4 md:mb-8 overflow-hidden rounded-lg shadow-lg relative">
           <img 
             src={artwork.image_url} 
             alt={artwork.title} 
-            className="object-contain w-full max-h-[50vh] md:max-h-[70vh]"
+            className={cn(
+              "object-contain w-full max-h-[50vh] md:max-h-[70vh]",
+              isPurchased && "opacity-75 filter"
+            )}
           />
+          {isPurchased && (
+            <div className="absolute top-4 right-4">
+              <Badge className="bg-red-500 hover:bg-red-600 px-3 py-1.5 text-white text-sm font-medium rounded-full">
+                Sold
+              </Badge>
+            </div>
+          )}
         </div>
         
         {/* Artwork information */}
@@ -80,29 +93,46 @@ export default async function ArtworkPage(props: { params: Promise<{ id: string 
             </p>
           </div>
           
-          {/* Purchase notice */}
+          {/* Purchase notice or Sold notice */}
           <div className="mt-6 md:mt-10">
-            <Alert className="bg-primary/10 border-primary">
-              <AlertCircle className="h-5 w-5 text-primary" />
-              <AlertTitle className="text-primary font-medium">Available for Purchase</AlertTitle>
-              <AlertDescription className="mt-2">
-                Interested in acquiring this artwork? Please contact us at <span className="font-medium">+1 (555) 123-4567</span> or email us at <span className="font-medium">sales@exhibition.gallery</span> for inquiries.
-              </AlertDescription>
-              <div className="mt-4 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-                <Button variant="outline" className="w-full sm:w-auto" asChild>
-                  <a href="tel:+15551234567" className="flex items-center justify-center">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Call Us
-                  </a>
-                </Button>
-                <Button className="w-full sm:w-auto" asChild>
-                  <a href="mailto:sales@exhibition.gallery" className="flex items-center justify-center">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Email Us
-                  </a>
-                </Button>
-              </div>
-            </Alert>
+            {isPurchased ? (
+              <Alert className="bg-gray-100 border-gray-300">
+                <CheckCircle className="h-5 w-5 text-gray-500" />
+                <AlertTitle className="text-gray-700 font-medium">This Artwork Has Been Sold</AlertTitle>
+                <AlertDescription className="mt-2 text-gray-600">
+                  This piece is no longer available for purchase. Please explore our other available artworks by {artist?.name} or other artists in our gallery.
+                </AlertDescription>
+                <div className="mt-4 flex justify-center">
+                  <Button variant="outline" asChild>
+                    <Link href={artist ? `/artist/${artist.id}` : "/"}>
+                      View More Works by {artist?.name}
+                    </Link>
+                  </Button>
+                </div>
+              </Alert>
+            ) : (
+              <Alert className="bg-primary/10 border-primary">
+                <AlertCircle className="h-5 w-5 text-primary" />
+                <AlertTitle className="text-primary font-medium">Available for Purchase</AlertTitle>
+                <AlertDescription className="mt-2">
+                  Interested in acquiring this artwork? Please contact us at <span className="font-medium">+1 (555) 123-4567</span> or email us at <span className="font-medium">sales@exhibition.gallery</span> for inquiries.
+                </AlertDescription>
+                <div className="mt-4 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                  <Button variant="outline" className="w-full sm:w-auto" asChild>
+                    <a href="tel:+15551234567" className="flex items-center justify-center">
+                      <Phone className="mr-2 h-4 w-4" />
+                      Call Us
+                    </a>
+                  </Button>
+                  <Button className="w-full sm:w-auto" asChild>
+                    <a href="mailto:sales@exhibition.gallery" className="flex items-center justify-center">
+                      <Mail className="mr-2 h-4 w-4" />
+                      Email Us
+                    </a>
+                  </Button>
+                </div>
+              </Alert>
+            )}
           </div>
         </div>
       </div>

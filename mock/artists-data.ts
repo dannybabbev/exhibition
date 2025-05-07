@@ -13,6 +13,7 @@ export interface Artwork {
   image_url: string;
   created_date: string;
   description?: string;
+  purchased?: boolean;
 }
 
 // Mock data for artists
@@ -68,9 +69,10 @@ export const artworks: Artwork[] = [
     id: "101",
     artist_id: "1",
     title: "Plastic Ocean",
-    image_url: "https://images.unsplash.com/photo-1621451547508-c31564825c66?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1559102877-4a2cc0e37fce?q=80&w=1287&auto=format&fit=crop",
     created_date: "2022",
-    description: "A striking sculpture made from recovered ocean plastic, depicting marine life entangled in human waste. This piece serves as a powerful reminder of our environmental impact."
+    description: "A striking sculpture made from recovered ocean plastic, depicting marine life entangled in human waste. This piece serves as a powerful reminder of our environmental impact.",
+    purchased: true
   },
   {
     id: "102",
@@ -110,7 +112,7 @@ export const artworks: Artwork[] = [
     id: "202",
     artist_id: "2",
     title: "Urban Identity",
-    image_url: "https://images.unsplash.com/photo-1561839561-b13bcfe95249?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1597424216809-3ba9864aeb18?q=80&w=1331&auto=format&fit=crop",
     created_date: "2022",
     description: "An exploration of multicultural identity in urban spaces, depicting diverse faces emerging from and merging with city architecture."
   },
@@ -120,13 +122,14 @@ export const artworks: Artwork[] = [
     title: "Borders Crossing",
     image_url: "https://images.unsplash.com/photo-1557180295-76eee20ae8aa?q=80&w=1287&auto=format&fit=crop",
     created_date: "2020",
-    description: "A powerful statement on immigration and border politics, featuring imagery that challenges notions of national boundaries and human movement."
+    description: "A powerful statement on immigration and border politics, featuring imagery that challenges notions of national boundaries and human movement.",
+    purchased: true
   },
   {
     id: "204",
     artist_id: "2",
     title: "Social Justice",
-    image_url: "https://images.unsplash.com/photo-1569510968950-87d17581ea69?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1287&auto=format&fit=crop",
     created_date: "2023",
     description: "A mural dedicated to social justice movements, featuring portraits of activists and symbolic representations of equality and solidarity."
   },
@@ -134,7 +137,7 @@ export const artworks: Artwork[] = [
     id: "205",
     artist_id: "2",
     title: "Unity in Diversity",
-    image_url: "https://images.unsplash.com/photo-1571511294462-5924629d4f96?q=80&w=1286&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1330&auto=format&fit=crop",
     created_date: "2022",
     description: "A celebration of cultural diversity, depicting interwoven patterns and symbols from various global traditions to create a harmonious whole."
   },
@@ -154,7 +157,8 @@ export const artworks: Artwork[] = [
     title: "Virtual Intimacy",
     image_url: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1380&auto=format&fit=crop",
     created_date: "2021",
-    description: "A multimedia piece examining how digital technologies both enable and complicate human connection and intimacy in the modern world."
+    description: "A multimedia piece examining how digital technologies both enable and complicate human connection and intimacy in the modern world.",
+    purchased: true
   },
   {
     id: "303",
@@ -210,9 +214,10 @@ export const artworks: Artwork[] = [
     id: "405",
     artist_id: "4",
     title: "Cultural Fusion",
-    image_url: "https://images.unsplash.com/photo-1578926288207-32356ad13f27?q=80&w=1471&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1474&auto=format&fit=crop",
     created_date: "2023",
-    description: "An exploration of cultural hybridity, merging visual elements from West African and Western modern art traditions into a unified aesthetic expression."
+    description: "An exploration of cultural hybridity, merging visual elements from West African and Western modern art traditions into a unified aesthetic expression.",
+    purchased: true
   },
   
   // Emma Blackwood's artworks
@@ -228,7 +233,7 @@ export const artworks: Artwork[] = [
     id: "502",
     artist_id: "5",
     title: "Domestic Threads",
-    image_url: "https://images.unsplash.com/photo-1591643529995-cf8826d9f613?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1338&auto=format&fit=crop",
     created_date: "2022",
     description: "A contemplation of domestic labor and craft traditions, weaving together household objects and textiles to examine gendered aspects of home and work."
   },
@@ -236,15 +241,16 @@ export const artworks: Artwork[] = [
     id: "503",
     artist_id: "5",
     title: "Tactile Time",
-    image_url: "https://images.unsplash.com/photo-1530016910220-52d680d7d220?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1533158326339-7f3cf2404354?q=80&w=1470&auto=format&fit=crop",
     created_date: "2023",
-    description: "An immersive textile environment that invites physical interaction, exploring the relationship between touch, material, and the passage of time."
+    description: "An immersive textile environment that invites physical interaction, exploring the relationship between touch, material, and the passage of time.",
+    purchased: true
   },
   {
     id: "504",
     artist_id: "5",
     title: "Fiber Chronicles",
-    image_url: "https://images.unsplash.com/photo-1485736231968-0c77489646e5?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1330&auto=format&fit=crop",
     created_date: "2020",
     description: "A narrative series told through textile techniques, with each panel representing a chapter in a personal or collective story, emphasizing materiality as memory."
   },
@@ -278,7 +284,7 @@ export const artworks: Artwork[] = [
     id: "604",
     artist_id: "6",
     title: "Minimalist Dialogue",
-    image_url: "https://images.unsplash.com/photo-1504198322253-cfa87a0ff60f?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1330&auto=format&fit=crop",
     created_date: "2020",
     description: "A reductive work exploring essential forms and materials, stripping away excess to reveal fundamental qualities of physical presence."
   },
