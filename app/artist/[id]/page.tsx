@@ -3,30 +3,32 @@ import Link from "next/link";
 import { ArtworkCard } from "@/components/ui/artwork-card";
 import { artists, artworks } from "@/mock/artists-data";
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const artist = artists.find((artist) => artist.id === params.id);
-  
+
   if (!artist) {
     return {
       title: 'Artist Not Found',
     };
   }
-  
+
   return {
     title: artist.name,
     description: artist.bio,
   };
 }
 
-export default function ArtistPage({ params }: { params: { id: string } }) {
+export default async function ArtistPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const artist = artists.find((artist) => artist.id === params.id);
-  
+
   if (!artist) {
     notFound();
   }
-  
+
   const artistArtworks = artworks.filter((artwork) => artwork.artist_id === artist.id);
-  
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       <div className="mb-6">
