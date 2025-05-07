@@ -67,28 +67,28 @@ export const artworks: Artwork[] = [
     id: "101",
     artist_id: "1",
     title: "Plastic Ocean",
-    image_url: "https://images.unsplash.com/photo-1576769267415-9642220d552a?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1621451547508-c31564825c66?q=80&w=1470&auto=format&fit=crop",
     created_date: "2022"
   },
   {
     id: "102",
     artist_id: "1",
     title: "Consumption Cycle",
-    image_url: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?q=80&w=1470&auto=format&fit=crop",
     created_date: "2023"
   },
   {
     id: "103",
     artist_id: "1",
     title: "Carbon Footprint",
-    image_url: "https://images.unsplash.com/photo-1550028061-c7b4a8234452?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?q=80&w=1287&auto=format&fit=crop",
     created_date: "2021"
   },
   {
     id: "104",
     artist_id: "1",
     title: "Biodegradable Future",
-    image_url: "https://images.unsplash.com/photo-1616093875201-d15cfa5e7340?q=80&w=1331&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1597424216809-3ba9864aeb18?q=80&w=1331&auto=format&fit=crop",
     created_date: "2023"
   },
   
@@ -97,35 +97,35 @@ export const artworks: Artwork[] = [
     id: "201",
     artist_id: "2",
     title: "Heritage Wall",
-    image_url: "https://images.unsplash.com/photo-1551913902-c92207136625?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1559102877-4a2cc0e37fce?q=80&w=1287&auto=format&fit=crop",
     created_date: "2021"
   },
   {
     id: "202",
     artist_id: "2",
     title: "Urban Identity",
-    image_url: "https://images.unsplash.com/photo-1523895665936-7bfe172b757d?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1561839561-b13bcfe95249?q=80&w=1470&auto=format&fit=crop",
     created_date: "2022"
   },
   {
     id: "203",
     artist_id: "2",
     title: "Borders Crossing",
-    image_url: "https://images.unsplash.com/photo-1547639202-4d7573d52ed0?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1557180295-76eee20ae8aa?q=80&w=1287&auto=format&fit=crop",
     created_date: "2020"
   },
   {
     id: "204",
     artist_id: "2",
     title: "Social Justice",
-    image_url: "https://images.unsplash.com/photo-1571511529921-cb12eb656a74?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1569510968950-87d17581ea69?q=80&w=1287&auto=format&fit=crop",
     created_date: "2023"
   },
   {
     id: "205",
     artist_id: "2",
     title: "Unity in Diversity",
-    image_url: "https://images.unsplash.com/photo-1509829859503-14da1efc7984?q=80&w=1286&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1571511294462-5924629d4f96?q=80&w=1286&auto=format&fit=crop",
     created_date: "2022"
   },
   
@@ -134,28 +134,28 @@ export const artworks: Artwork[] = [
     id: "301",
     artist_id: "3",
     title: "Digital Natives",
-    image_url: "https://images.unsplash.com/photo-1526566662075-2f143cfa7475?q=80&w=1330&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1330&auto=format&fit=crop",
     created_date: "2022"
   },
   {
     id: "302",
     artist_id: "3",
     title: "Virtual Intimacy",
-    image_url: "https://images.unsplash.com/photo-1519791883288-dc8bd696e667?q=80&w=1380&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1380&auto=format&fit=crop",
     created_date: "2021"
   },
   {
     id: "303",
     artist_id: "3",
     title: "Augmented Reality",
-    image_url: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1287&auto=format&fit=crop",
     created_date: "2023"
   },
   {
     id: "304",
     artist_id: "3",
     title: "Disconnected Connection",
-    image_url: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1470&auto=format&fit=crop",
     created_date: "2020"
   },
   
@@ -164,35 +164,35 @@ export const artworks: Artwork[] = [
     id: "401",
     artist_id: "4",
     title: "Lagos Rhythm",
-    image_url: "https://images.unsplash.com/photo-1482245294234-b3f2f8d5f1a4?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1579965342575-16428a7c8881?q=80&w=1470&auto=format&fit=crop",
     created_date: "2022"
   },
   {
     id: "402",
     artist_id: "4",
     title: "Jazz Composition No. 4",
-    image_url: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1558865869-c93f6f8482af?q=80&w=1470&auto=format&fit=crop",
     created_date: "2023"
   },
   {
     id: "403",
     artist_id: "4",
     title: "Ancestral Memories",
-    image_url: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?q=80&w=1470&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1533158326339-7f3cf2404354?q=80&w=1470&auto=format&fit=crop",
     created_date: "2021"
   },
   {
     id: "404",
     artist_id: "4",
     title: "Harmonic Abstraction",
-    image_url: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=1338&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1338&auto=format&fit=crop",
     created_date: "2020"
   },
   {
     id: "405",
     artist_id: "4",
     title: "Cultural Fusion",
-    image_url: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1471&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1578926288207-32356ad13f27?q=80&w=1471&auto=format&fit=crop",
     created_date: "2023"
   },
   
@@ -201,28 +201,28 @@ export const artworks: Artwork[] = [
     id: "501",
     artist_id: "5",
     title: "Woven Memories",
-    image_url: "https://images.unsplash.com/photo-1549887534-1541e9326642?q=80&w=1474&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1474&auto=format&fit=crop",
     created_date: "2021"
   },
   {
     id: "502",
     artist_id: "5",
     title: "Domestic Threads",
-    image_url: "https://images.unsplash.com/photo-1580408485028-fe8de2f091d0?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1591643529995-cf8826d9f613?q=80&w=1287&auto=format&fit=crop",
     created_date: "2022"
   },
   {
     id: "503",
     artist_id: "5",
     title: "Tactile Time",
-    image_url: "https://images.unsplash.com/photo-1544963151-fb45005a0531?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1530016910220-52d680d7d220?q=80&w=1287&auto=format&fit=crop",
     created_date: "2023"
   },
   {
     id: "504",
     artist_id: "5",
     title: "Fiber Chronicles",
-    image_url: "https://images.unsplash.com/photo-1598885511440-9e30a8d08bbe?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1485736231968-0c77489646e5?q=80&w=1287&auto=format&fit=crop",
     created_date: "2020"
   },
   
@@ -231,35 +231,35 @@ export const artworks: Artwork[] = [
     id: "601",
     artist_id: "6",
     title: "Material Void",
-    image_url: "https://images.unsplash.com/photo-1573096108468-702f6014ef28?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1287&auto=format&fit=crop",
     created_date: "2022"
   },
   {
     id: "602",
     artist_id: "6",
     title: "Perception Study #7",
-    image_url: "https://images.unsplash.com/photo-1541512416146-3bec8f324a94?q=80&w=1335&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=1335&auto=format&fit=crop",
     created_date: "2021"
   },
   {
     id: "603",
     artist_id: "6",
     title: "Spatial Intervention",
-    image_url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1064&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1552327359-d86398116072?q=80&w=1064&auto=format&fit=crop",
     created_date: "2023"
   },
   {
     id: "604",
     artist_id: "6",
     title: "Minimalist Dialogue",
-    image_url: "https://images.unsplash.com/photo-1548042103-8bf5b08c8216?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1504198322253-cfa87a0ff60f?q=80&w=1287&auto=format&fit=crop",
     created_date: "2020"
   },
   {
     id: "605",
     artist_id: "6",
     title: "Conceptual Space",
-    image_url: "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?q=80&w=1287&auto=format&fit=crop",
+    image_url: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=1287&auto=format&fit=crop",
     created_date: "2023"
   }
 ]; 

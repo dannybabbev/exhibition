@@ -3,23 +3,8 @@ import Link from "next/link";
 import { ArtworkCard } from "@/components/ui/artwork-card";
 import { artists, artworks } from "@/mock/artists-data";
 
-export async function generateMetadata(props: { params: Promise<{ id: string }> }) {
-  const params = await props.params;
-  const artist = artists.find((artist) => artist.id === params.id);
-
-  if (!artist) {
-    return {
-      title: 'Artist Not Found',
-    };
-  }
-
-  return {
-    title: artist.name,
-    description: artist.bio,
-  };
-}
-
 export default async function ArtistPage(props: { params: Promise<{ id: string }> }) {
+  // Await params to prevent "params should be awaited before using its properties" error
   const params = await props.params;
   const artist = artists.find((artist) => artist.id === params.id);
 
