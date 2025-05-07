@@ -1,0 +1,1 @@
+We are building a simple exhibition App with next.js in the frontend and supabase in the backend. Keep it simple but elegant. Use shadcn ui components. The frontend is only reading from the supabase db. It is not writing to it.
