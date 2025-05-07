@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 interface Artist {
   id: string;
@@ -13,20 +14,22 @@ interface ArtistCardProps {
 
 export function ArtistCard({ artist }: ArtistCardProps) {
   return (
-    <Card className="overflow-hidden h-full flex flex-col">
-      <div className="relative w-full h-64">
-        <img 
-          src={artist.image_url}
-          alt={artist.name}
-          className="object-cover w-full h-full"
-        />
-      </div>
-      <CardHeader>
-        <CardTitle className="text-xl">{artist.name}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        <p className="text-muted-foreground line-clamp-3">{artist.bio}</p>
-      </CardContent>
-    </Card>
+    <Link href={`/artist/${artist.id}`} className="block h-full">
+      <Card className="overflow-hidden h-full flex flex-col transition-all hover:shadow-md">
+        <div className="relative w-full h-64">
+          <img 
+            src={artist.image_url}
+            alt={artist.name}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <CardHeader>
+          <CardTitle className="text-xl">{artist.name}</CardTitle>
+        </CardHeader>
+        <CardContent className="flex-grow">
+          <p className="text-muted-foreground line-clamp-3">{artist.bio}</p>
+        </CardContent>
+      </Card>
+    </Link>
   );
 } 
