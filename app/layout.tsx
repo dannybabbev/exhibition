@@ -2,7 +2,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
-import { Palette } from "lucide-react";
+import { Palette, Github } from "lucide-react";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -54,6 +54,9 @@ export default function RootLayout({
                 <p>
                   Made with ❤ in Switzerland
                 </p>
+                <Link href="https://github.com/dannybabbev/exhibition" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </Link>
                 <ThemeSwitcher />
               </footer>
             </div>
