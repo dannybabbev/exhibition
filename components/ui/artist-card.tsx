@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 interface Artist {
-  id: string;
+  slug: string;
   name: string;
   bio: string;
   image_url: string;
@@ -14,7 +14,7 @@ interface ArtistCardProps {
 
 export function ArtistCard({ artist }: ArtistCardProps) {
   return (
-    <Link href={`/artist/${artist.id}`} className="block h-full">
+    <Link href={`/artist/${artist.slug}`} className="block h-full">
       <Card className="overflow-hidden h-full flex flex-col transition-all hover:shadow-md">
         <div className="relative w-full h-64">
           <img 

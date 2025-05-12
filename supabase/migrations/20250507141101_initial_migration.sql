@@ -1,6 +1,7 @@
 -- Create artists table
 CREATE TABLE public.artists (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id SERIAL PRIMARY KEY,
+  slug TEXT NOT NULL,
   name TEXT NOT NULL,
   bio TEXT NOT NULL,
   image_url TEXT NOT NULL,
@@ -9,21 +10,23 @@ CREATE TABLE public.artists (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
 );
 
+CREATE UNIQUE INDEX idx_artists_slug ON public.artists(slug);
+
 -- Create artworks table
 CREATE TABLE public.artworks (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  artist_id UUID NOT NULL REFERENCES public.artists(id) ON DELETE CASCADE,
+  id SERIAL PRIMARY KEY,
+  artist_id INTEGER NOT NULL REFERENCES public.artists(id) ON DELETE CASCADE,
   title TEXT NOT NULL,
   image_url TEXT NOT NULL,
-  created_date TEXT NOT NULL,
+  created_date TEXT,
   description TEXT,
-  purchased BOOLEAN DEFAULT false,
+  purchased BOOLEAN NOT NULL DEFAULT false,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
 );
 
 -- Create indices for performance
-CREATE INDEX idx_artworks_artist_id ON public.artworks(artist_id);
+CREATE INDEX idx_artworks_artist_slug ON public.artworks(artist_id);
 
 -- Enable Row Level Security on tables
 ALTER TABLE public.artists ENABLE ROW LEVEL SECURITY;

@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { artworks, artists } from "@/mock/artists-data";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Phone, Mail, CheckCircle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -9,10 +8,25 @@ import { ArtworkModal } from "@/components/ui/artwork-modal";
 import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import Supabase from "@/lib/supabase";
+import { createClient } from "@/utils/supabase/server";
+
+const getArtwork = async (id: number) => {
+  const s = await createClient();
+  const supabaseClient = new Supabase(s);
+
+  const artwork = await supabaseClient.getArtworkById(id);
+
+  if (!artwork || artwork.length === 0) {
+    return null;
+  }
+
+  return artwork[0];
+}
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const artwork = artworks.find((artwork) => artwork.id === params.id);
+  const artwork = await getArtwork(Number(params.id));
   
   if (!artwork) {
     return {
@@ -20,7 +34,7 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
     };
   }
   
-  const artist = artists.find((artist) => artist.id === artwork.artist_id);
+  const artist = artwork.artists;
   
   return {
     title: `${artwork.title} by ${artist?.name || 'Unknown Artist'} | Exhibition Gallery`,
@@ -33,20 +47,20 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
 
 export default async function ArtworkPage(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
-  const artwork = artworks.find((artwork) => artwork.id === params.id);
+  const artwork = await getArtwork(Number(params.id));
 
   if (!artwork) {
     notFound();
   }
 
-  const artist = artists.find((artist) => artist.id === artwork.artist_id);
-  const isPurchased = artwork.purchased === true;
+  const artist = artwork.artists;
+  const isPurchased = artwork.purchased;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <div className="mb-6">
         <Link 
-          href={artist ? `/artist/${artist.id}` : "/"}
+          href={artist ? `/artist/${artist.slug}` : "/"}
           className="inline-flex items-center text-sm font-medium text-primary hover:underline"
         >
           ← Back to {artist ? artist.name : "Home"}
@@ -112,7 +126,7 @@ export default async function ArtworkPage(props: { params: Promise<{ id: string 
                 </AlertDescription>
                 <div className="mt-4 flex justify-center">
                   <Button variant="outline" asChild>
-                    <Link href={artist ? `/artist/${artist.id}` : "/"}>
+                    <Link href={artist ? `/artist/${artist.slug}` : "/"}>
                       View More Works by {artist?.name}
                     </Link>
                   </Button>

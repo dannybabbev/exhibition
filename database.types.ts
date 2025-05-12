@@ -39,62 +39,65 @@ export type Database = {
           bio: string
           created_at: string
           extended_bio: string | null
-          id: string
+          id: number
           image_url: string
           name: string
+          slug: string
           updated_at: string
         }
         Insert: {
           bio: string
           created_at?: string
           extended_bio?: string | null
-          id?: string
+          id?: number
           image_url: string
           name: string
+          slug: string
           updated_at?: string
         }
         Update: {
           bio?: string
           created_at?: string
           extended_bio?: string | null
-          id?: string
+          id?: number
           image_url?: string
           name?: string
+          slug?: string
           updated_at?: string
         }
         Relationships: []
       }
       artworks: {
         Row: {
-          artist_id: string
+          artist_id: number
           created_at: string
-          created_date: string
+          created_date: string | null
           description: string | null
-          id: string
+          id: number
           image_url: string
-          purchased: boolean | null
+          purchased: boolean
           title: string
           updated_at: string
         }
         Insert: {
-          artist_id: string
+          artist_id: number
           created_at?: string
-          created_date: string
+          created_date?: string | null
           description?: string | null
-          id?: string
+          id?: number
           image_url: string
-          purchased?: boolean | null
+          purchased?: boolean
           title: string
           updated_at?: string
         }
         Update: {
-          artist_id?: string
+          artist_id?: number
           created_at?: string
-          created_date?: string
+          created_date?: string | null
           description?: string | null
-          id?: string
+          id?: number
           image_url?: string
-          purchased?: boolean | null
+          purchased?: boolean
           title?: string
           updated_at?: string
         }

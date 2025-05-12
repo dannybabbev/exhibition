@@ -1,12 +1,26 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArtworkCard } from "@/components/ui/artwork-card";
-import { artists, artworks } from "@/mock/artists-data";
 import { Metadata } from "next";
+import Supabase from "@/lib/supabase";
+import { createClient } from "@/utils/supabase/server";
+
+const getArtist = async (id: string) => {
+  const s = await createClient();
+  const supabaseClient = new Supabase(s);
+
+  const artistArray = await supabaseClient.getArtistBySlug(id);
+  
+  if (!artistArray || artistArray.length === 0) {
+    return null;
+  }
+
+  return artistArray[0];
+}
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const artist = artists.find((artist) => artist.id === params.id);
+  const artist = await getArtist(params.id);
 
   if (!artist) {
     return {
@@ -35,13 +49,13 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
 export default async function ArtistPage(props: { params: Promise<{ id: string }> }) {
   // Await params to prevent "params should be awaited before using its properties" error
   const params = await props.params;
-  const artist = artists.find((artist) => artist.id === params.id);
+  const artist = await getArtist(params.id);
 
   if (!artist) {
     notFound();
   }
 
-  const artistArtworks = artworks.filter((artwork) => artwork.artist_id === artist.id);
+  const artistArtworks = artist.artworks;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -74,7 +88,10 @@ export default async function ArtistPage(props: { params: Promise<{ id: string }
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {artistArtworks.map((artwork) => (
-          <ArtworkCard key={artwork.id} artwork={artwork} />
+          <ArtworkCard key={artwork.id} artwork={{
+            ...artwork, 
+            artist_slug: params.id,
+          }} />
         ))}
       </div>
     </div>

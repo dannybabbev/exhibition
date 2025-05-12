@@ -1,8 +1,14 @@
 import Hero from "@/components/hero";
 import { ArtistCard } from "@/components/ui/artist-card";
-import { artists } from "@/mock/artists-data";
+import Supabase from "@/lib/supabase";
+import { createClient } from "@/utils/supabase/server";
 
 export default async function Home() {
+  const s = await createClient();
+  const supabaseClient = new Supabase(s);
+
+  const artists = await supabaseClient.getArtists();
+
   return (
     <>
       <Hero />
