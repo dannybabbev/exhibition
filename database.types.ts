@@ -36,7 +36,7 @@ export type Database = {
     Tables: {
       artists: {
         Row: {
-          bio: string
+          bio: string | null
           created_at: string
           extended_bio: string | null
           id: number
@@ -46,7 +46,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
-          bio: string
+          bio?: string | null
           created_at?: string
           extended_bio?: string | null
           id?: number
@@ -56,7 +56,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
-          bio?: string
+          bio?: string | null
           created_at?: string
           extended_bio?: string | null
           id?: number
@@ -75,6 +75,7 @@ export type Database = {
           description: string | null
           id: number
           image_url: string
+          price: string | null
           purchased: boolean
           title: string
           updated_at: string
@@ -86,6 +87,7 @@ export type Database = {
           description?: string | null
           id?: number
           image_url: string
+          price?: string | null
           purchased?: boolean
           title: string
           updated_at?: string
@@ -97,6 +99,7 @@ export type Database = {
           description?: string | null
           id?: number
           image_url?: string
+          price?: string | null
           purchased?: boolean
           title?: string
           updated_at?: string

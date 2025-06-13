@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "reset-db": "supabase db reset && supabase gen types --lang=typescript --local > database.types.ts"
+    "reset:db": "supabase db reset && supabase gen types --lang=typescript --local > database.types.ts"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.1",

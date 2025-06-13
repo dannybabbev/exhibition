@@ -33,14 +33,14 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
     description: artist.bio,
     openGraph: {
       title: artist.name,
-      description: artist.bio,
+      description: artist.bio || "",
       images: [{ url: artist.image_url }],
       type: 'profile',
     },
     twitter: {
       card: 'summary_large_image',
       title: artist.name,
-      description: artist.bio,
+      description: artist.bio || "",
       images: [artist.image_url],
     }
   };

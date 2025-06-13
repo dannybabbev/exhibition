@@ -4,7 +4,7 @@ import Link from "next/link";
 interface Artist {
   slug: string;
   name: string;
-  bio: string;
+  bio: string | null;
   image_url: string;
 }
 

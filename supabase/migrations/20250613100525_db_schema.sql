@@ -1,0 +1,5 @@
+ALTER TABLE artists 
+ALTER COLUMN bio DROP NOT NULL;
+
+ALTER TABLE artworks 
+ADD COLUMN price text;
